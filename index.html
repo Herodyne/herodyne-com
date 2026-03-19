@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Herodyne</title>
+  <meta name="description" content="Herodyne helps teams build stronger systems and ship with confidence." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-orb bg-orb-1" aria-hidden="true"></div>
+  <div class="bg-orb bg-orb-2" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top">Herodyne</a>
+      <a class="button button-ghost" href="mailto:hello@herodyne.com">Contact</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <p class="eyebrow">Practical Engineering Partner</p>
+      <h1>Build fast. Stay reliable.</h1>
+      <p class="lead">
+        Herodyne helps growing teams design, ship, and improve business-critical software without adding unnecessary process.
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="mailto:hello@herodyne.com">Start a Conversation</a>
+        <a class="text-link" href="#services">See Services</a>
+      </div>
+    </section>
+
+    <section id="services" class="container section">
+      <h2>What we do</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Product Delivery</h3>
+          <p>Feature planning, execution, and shipping support from backlog to production.</p>
+        </article>
+        <article class="card">
+          <h3>System Cleanup</h3>
+          <p>Targeted refactors and architecture improvements to reduce friction and risk.</p>
+        </article>
+        <article class="card">
+          <h3>Technical Advisory</h3>
+          <p>Clear engineering guidance for roadmap decisions, hiring, and technical strategy.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container section cta">
+      <h2>Need a steady technical partner?</h2>
+      <p>Let’s discuss your priorities and design a practical plan for the next 90 days.</p>
+      <a class="button" href="mailto:hello@herodyne.com">Book Intro Call</a>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <p>© <span id="year"></span> Herodyne. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
