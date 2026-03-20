@@ -38,7 +38,7 @@
         <a href="#process">Process</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a class="button button-ghost" href="mailto:info@herodyne.com">Request Talent</a>
+      <a class="button button-ghost" href="#hiring-form">Request Talent</a>
     </div>
   </header>
 
@@ -50,8 +50,8 @@
         Herodyne helps product and technology leaders hire software engineers for delivery-critical initiatives across contract staffing, contract-to-hire, and direct hire.
       </p>
       <div class="hero-actions">
-        <a class="button" href="mailto:info@herodyne.com">Request Talent</a>
-        <a class="button button-ghost" href="mailto:careers@herodyne.com">Submit Resume</a>
+        <a class="button" href="#hiring-form">Request Talent</a>
+        <a class="button button-ghost" href="#candidate-form">Submit Resume</a>
       </div>
       <p class="subtle">Serving growth-stage and enterprise teams across the U.S.</p>
     </section>
@@ -217,7 +217,43 @@
             <li>Technical role calibration and market feedback</li>
             <li>Hands-on coordination through placement</li>
           </ul>
-          <a class="button" href="mailto:info@herodyne.com?subject=Hiring%20Request%20-%20Herodyne">Contact Client Services</a>
+          <form id="hiring-form" class="web3-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="aa5d73c7-cf73-4ee2-8350-ee32c4ccd710" />
+            <input type="hidden" name="subject" value="Hiring Request - Herodyne" />
+            <input type="hidden" name="from_name" value="Herodyne Website" />
+            <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off" />
+
+            <div class="form-grid">
+              <label>
+                Name
+                <input type="text" name="name" required />
+              </label>
+              <label>
+                Work Email
+                <input type="email" name="email" required />
+              </label>
+              <label>
+                Company
+                <input type="text" name="company" required />
+              </label>
+              <label>
+                Hiring Need
+                <select name="hiring_need" required>
+                  <option value="">Select one</option>
+                  <option value="Contract">Contract</option>
+                  <option value="Contract-to-Hire">Contract-to-Hire</option>
+                  <option value="Direct Hire">Direct Hire</option>
+                </select>
+              </label>
+              <label class="full">
+                Role Details
+                <textarea name="message" rows="4" required placeholder="Role title, core stack, target timeline, and any must-have criteria."></textarea>
+              </label>
+            </div>
+
+            <button class="button" type="submit">Send Hiring Request</button>
+            <p class="form-status" aria-live="polite"></p>
+          </form>
         </article>
         <article class="contact-card">
           <p class="contact-eyebrow">For Candidates</p>
@@ -228,7 +264,38 @@
             <li>Transparent process and timely communication</li>
             <li>Role alignment based on skills and goals</li>
           </ul>
-          <a class="button button-ghost" href="mailto:careers@herodyne.com?subject=Candidate%20Inquiry%20-%20Herodyne">Contact Candidate Services</a>
+          <form id="candidate-form" class="web3-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="aa5d73c7-cf73-4ee2-8350-ee32c4ccd710" />
+            <input type="hidden" name="subject" value="Candidate Inquiry - Herodyne" />
+            <input type="hidden" name="from_name" value="Herodyne Website" />
+            <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off" />
+
+            <div class="form-grid">
+              <label>
+                Name
+                <input type="text" name="name" required />
+              </label>
+              <label>
+                Email
+                <input type="email" name="email" required />
+              </label>
+              <label>
+                LinkedIn URL
+                <input type="url" name="linkedin" placeholder="https://www.linkedin.com/in/your-profile" />
+              </label>
+              <label>
+                Resume URL
+                <input type="url" name="resume_url" placeholder="https://..." />
+              </label>
+              <label class="full">
+                Role Interests
+                <textarea name="message" rows="4" required placeholder="Target roles, key technologies, location preferences, and timing."></textarea>
+              </label>
+            </div>
+
+            <button class="button button-ghost" type="submit">Send Candidate Inquiry</button>
+            <p class="form-status" aria-live="polite"></p>
+          </form>
         </article>
       </div>
     </section>
@@ -244,6 +311,39 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.querySelectorAll('.web3-form').forEach((form) => {
+      const statusEl = form.querySelector('.form-status');
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const submitButton = form.querySelector('button[type="submit"]');
+        const formData = new FormData(form);
+
+        submitButton.disabled = true;
+        statusEl.textContent = 'Sending...';
+
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData
+          });
+          const result = await response.json();
+
+          if (result.success) {
+            statusEl.textContent = 'Thanks. Your message was sent.';
+            form.reset();
+          } else {
+            statusEl.textContent = 'Submission failed. Please try again or email us directly.';
+          }
+        } catch (error) {
+          statusEl.textContent = 'Network issue. Please try again or email us directly.';
+        } finally {
+          submitButton.disabled = false;
+        }
+      });
+    });
   </script>
 </body>
 </html>

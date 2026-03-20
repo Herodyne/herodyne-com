@@ -329,6 +329,65 @@ h3 {
   margin-top: 0.35rem;
 }
 
+.web3-form {
+  margin-top: 0.85rem;
+}
+
+.form-grid {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 0.9rem;
+}
+
+.form-grid label {
+  display: grid;
+  gap: 0.35rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--ink);
+}
+
+.form-grid .full {
+  grid-column: 1 / -1;
+}
+
+.form-grid input,
+.form-grid select,
+.form-grid textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.6rem 0.7rem;
+  font: inherit;
+  color: var(--ink);
+  background: #fff;
+}
+
+.form-grid textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.form-grid input:focus,
+.form-grid select:focus,
+.form-grid textarea:focus {
+  border-color: var(--accent);
+  outline: 2px solid color-mix(in hsl, var(--accent), white 45%);
+  outline-offset: 1px;
+}
+
+.form-status {
+  margin: 0.6rem 0 0;
+  min-height: 1.2em;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.botcheck {
+  display: none;
+}
+
 .button,
 .button-ghost {
   display: inline-block;
@@ -363,6 +422,13 @@ h3 {
 .button-ghost:focus-visible {
   border-color: var(--line-strong);
   background: #ffffff;
+}
+
+.button:disabled,
+.button-ghost:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
 }
 
 a:focus-visible,
@@ -469,6 +535,10 @@ button:focus-visible {
   .button-ghost {
     width: 100%;
     text-align: center;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
   }
 
   .site-footer {
