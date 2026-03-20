@@ -28,11 +28,12 @@ body {
 }
 
 .site-header {
-  padding: 1rem 0;
+  padding: 0.85rem 0;
   position: sticky;
   top: 0;
+  z-index: 10;
   backdrop-filter: blur(6px);
-  background: color-mix(in hsl, var(--bg), transparent 28%);
+  background: color-mix(in hsl, var(--bg), transparent 20%);
   border-bottom: 1px solid color-mix(in hsl, var(--line), transparent 35%);
 }
 
@@ -40,6 +41,20 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
+}
+
+.top-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.top-links a {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
 }
 
 .brand {
@@ -56,7 +71,7 @@ body {
 }
 
 .hero {
-  padding: clamp(4rem, 8vw, 7rem) 0 3rem;
+  padding: clamp(3.4rem, 8vw, 6.5rem) 0 2.8rem;
 }
 
 .eyebrow {
@@ -78,21 +93,31 @@ h3 {
 }
 
 h1 {
-  margin-top: 0.45rem;
-  font-size: clamp(2rem, 6vw, 4rem);
-  line-height: 1.04;
-  max-width: 15ch;
+  margin-top: 0.5rem;
+  font-size: clamp(2rem, 5.8vw, 3.7rem);
+  line-height: 1.07;
+  max-width: 16ch;
+}
+
+h2 {
+  font-size: clamp(1.45rem, 3vw, 2.05rem);
 }
 
 .lead {
-  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-size: clamp(1rem, 2vw, 1.22rem);
   color: var(--muted);
-  max-width: 60ch;
+  max-width: 62ch;
   margin: 1rem 0 0;
 }
 
+.subtle {
+  margin: 0.95rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 .hero-actions {
-  margin-top: 1.5rem;
+  margin-top: 1.4rem;
   display: flex;
   gap: 0.9rem;
   align-items: center;
@@ -100,14 +125,17 @@ h1 {
 }
 
 .section {
-  padding: 2.25rem 0;
+  padding: 2.2rem 0;
 }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 1rem;
   margin-top: 1rem;
+}
+
+.three-col {
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
 }
 
 .card {
@@ -118,17 +146,66 @@ h1 {
 }
 
 .card h3 {
-  font-size: 1.1rem;
+  font-size: 1.07rem;
 }
 
 .card p {
-  margin: 0.45rem 0 0;
+  margin: 0.48rem 0 0;
+  color: var(--muted);
+}
+
+.pill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.05rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.25rem 0.8rem;
+  background: #ffffff;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.pill.muted {
+  font-weight: 500;
+}
+
+.step-number {
+  margin: 0;
+  color: var(--accent);
+  font-weight: 700;
+  font-family: "Space Grotesk", sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.faq-list {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.faq-item {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  padding: 0.95rem 1rem;
+}
+
+.faq-item p {
+  margin: 0.4rem 0 0;
   color: var(--muted);
 }
 
 .cta {
   margin-top: 0.5rem;
-  padding: 1.6rem;
+  padding: 1.55rem;
   border: 1px solid var(--line);
   border-radius: 16px;
   background: var(--surface);
@@ -169,15 +246,18 @@ h1 {
   border-color: #b4bfba;
 }
 
-.text-link {
-  color: var(--ink);
-  font-weight: 600;
-}
-
 .site-footer {
   padding: 2.2rem 0 2.6rem;
   color: var(--muted);
   font-size: 0.95rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.site-footer a {
+  color: inherit;
 }
 
 .bg-orb {
@@ -227,12 +307,24 @@ h1 {
   }
 }
 
+@media (max-width: 820px) {
+  .top-links {
+    display: none;
+  }
+}
+
 @media (max-width: 640px) {
   .site-header {
     position: static;
   }
 
   .hero {
-    padding-top: 2.6rem;
+    padding-top: 2.4rem;
+  }
+
+  .button,
+  .button-ghost {
+    width: 100%;
+    text-align: center;
   }
 }
