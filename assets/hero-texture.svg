@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="700" viewBox="0 0 900 700" fill="none">
+  <defs>
+    <linearGradient id="g1" x1="90" y1="20" x2="780" y2="640" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F7E5D8"/>
+      <stop offset="1" stop-color="#F1D7C5"/>
+    </linearGradient>
+    <filter id="blurA" x="-40%" y="-40%" width="180%" height="180%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="34"/>
+    </filter>
+  </defs>
+  <rect width="900" height="700" rx="32" fill="url(#g1)"/>
+  <g filter="url(#blurA)" opacity="0.7">
+    <circle cx="210" cy="170" r="150" fill="#F0CDB7"/>
+    <circle cx="670" cy="220" r="185" fill="#DE9E7F"/>
+    <circle cx="520" cy="500" r="170" fill="#EFC2A6"/>
+  </g>
+  <path d="M118 490C238 448 350 390 474 330C594 272 702 230 792 196" stroke="#FFFFFF" stroke-opacity="0.62" stroke-width="3"/>
+  <path d="M118 542C252 500 378 442 508 382C630 324 724 280 794 250" stroke="#FFFFFF" stroke-opacity="0.52" stroke-width="3"/>
+  <path d="M118 590C258 550 392 496 530 442C652 394 738 350 794 322" stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="2.5"/>
+  <rect x="108" y="90" width="684" height="520" rx="24" stroke="#FFFFFF" stroke-opacity="0.42" stroke-width="2"/>
+</svg>

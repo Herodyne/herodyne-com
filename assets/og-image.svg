@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="95" y1="55" x2="1100" y2="590" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#E8EFE5"/>
+      <stop offset="1" stop-color="#F2DACC"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  <rect x="56" y="56" width="1088" height="518" rx="28" fill="#FFFFFF" fill-opacity="0.58" stroke="#FFFFFF" stroke-opacity="0.7" stroke-width="2"/>
+  <text x="104" y="238" font-family="Space Grotesk, Arial, sans-serif" font-size="78" font-weight="700" fill="#162126">Herodyne</text>
+  <text x="104" y="312" font-family="Source Sans 3, Arial, sans-serif" font-size="38" fill="#25363D">Software Engineering Staffing</text>
+  <text x="104" y="370" font-family="Source Sans 3, Arial, sans-serif" font-size="32" fill="#45575F">Contract | Contract-to-Hire | Direct Hire</text>
+  <circle cx="996" cy="136" r="84" fill="#CA5A2E" fill-opacity="0.28"/>
+  <circle cx="1028" cy="478" r="110" fill="#9CC0B2" fill-opacity="0.4"/>
+  <path d="M104 456C282 392 470 388 640 434C768 468 846 522 996 548" stroke="#CA5A2E" stroke-opacity="0.4" stroke-width="6"/>
+</svg>

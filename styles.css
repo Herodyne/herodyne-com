@@ -24,9 +24,7 @@ body {
   margin: 0;
   font-family: "Source Sans 3", sans-serif;
   color: var(--ink);
-  background: radial-gradient(1200px 600px at 5% 0%, #e8efe5 0%, transparent 60%),
-    radial-gradient(900px 500px at 100% 5%, #efe1d8 0%, transparent 55%),
-    var(--bg);
+  background: linear-gradient(180deg, #f7f3ef 0%, var(--bg) 24%, #f4f6f1 100%);
   line-height: 1.55;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -106,7 +104,16 @@ body {
 }
 
 .hero {
-  padding: clamp(3.6rem, 8vw, 6.75rem) 0 3.25rem;
+  padding: clamp(2rem, 4.6vw, 3.4rem) clamp(1.1rem, 3vw, 2rem) clamp(2.25rem, 4.6vw, 3rem);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow-sm);
+  background-image:
+    linear-gradient(120deg, rgba(255, 255, 255, 0.9) 8%, rgba(255, 255, 255, 0.82) 52%, rgba(255, 255, 255, 0.6) 100%),
+    url("assets/hero-texture.svg");
+  background-size: cover;
+  background-position: center;
+  margin-top: clamp(1rem, 2vw, 1.6rem);
 }
 
 .eyebrow {
@@ -146,7 +153,7 @@ h3 {
 .lead {
   font-size: clamp(1rem, 2vw, 1.22rem);
   color: var(--muted);
-  max-width: 62ch;
+  max-width: 56ch;
   margin: 1rem 0 0;
 }
 
@@ -237,6 +244,20 @@ h3 {
   font-weight: 700;
   font-family: "Space Grotesk", sans-serif;
   letter-spacing: 0.04em;
+}
+
+.process-visual {
+  margin: 1.1rem 0 0;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.process-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .faq-list {
@@ -459,53 +480,6 @@ button:focus-visible {
   margin-top: 0.3rem;
   font-size: 0.88rem;
   max-width: 66ch;
-}
-
-.bg-orb {
-  position: fixed;
-  z-index: -1;
-  pointer-events: none;
-  border-radius: 999px;
-  filter: blur(55px);
-  opacity: 0.42;
-}
-
-.bg-orb-1 {
-  width: 220px;
-  height: 220px;
-  background: #b9d3c8;
-  top: 10%;
-  right: 7%;
-  animation: floatA 13s ease-in-out infinite;
-}
-
-.bg-orb-2 {
-  width: 200px;
-  height: 200px;
-  background: #e8b79f;
-  bottom: 11%;
-  left: 4%;
-  animation: floatB 14s ease-in-out infinite;
-}
-
-@keyframes floatA {
-  0%,
-  100% {
-    transform: translateY(0px) translateX(0px);
-  }
-  50% {
-    transform: translateY(-10px) translateX(6px);
-  }
-}
-
-@keyframes floatB {
-  0%,
-  100% {
-    transform: translateY(0px) translateX(0px);
-  }
-  50% {
-    transform: translateY(11px) translateX(-8px);
-  }
 }
 
 @media (max-width: 920px) {
