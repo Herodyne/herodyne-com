@@ -18,6 +18,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 92px;
 }
 
 body {
@@ -173,6 +174,10 @@ h3 {
 
 .section {
   padding: 2.85rem 0;
+}
+
+section[id] {
+  scroll-margin-top: 92px;
 }
 
 .section-intro {
